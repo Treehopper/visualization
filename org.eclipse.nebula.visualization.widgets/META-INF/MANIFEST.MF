@@ -8,6 +8,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.swt,
  org.eclipse.draw2d,
  org.eclipse.nebula.visualization.xygraph;bundle-version="1.0.0"
-Export-Package: org.eclipse.nebula.visualization.widgets.datadefinition,
+Export-Package: org.eclipse.nebula.visualization.internal.widgets.introspection,
+ org.eclipse.nebula.visualization.widgets.datadefinition,
+ org.eclipse.nebula.visualization.widgets.figureparts,
  org.eclipse.nebula.visualization.widgets.figures,
- org.eclipse.nebula.visualization.widgets.introspection
+ org.eclipse.nebula.visualization.widgets.util

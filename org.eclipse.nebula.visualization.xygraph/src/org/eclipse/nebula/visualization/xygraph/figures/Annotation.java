@@ -22,13 +22,13 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.nebula.visualization.xygraph.Preferences;
+import org.eclipse.nebula.visualization.internal.xygraph.undo.MovingAnnotationCommand;
+import org.eclipse.nebula.visualization.internal.xygraph.undo.MovingAnnotationLabelCommand;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.IDataProvider;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.IDataProviderListener;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.ISample;
 import org.eclipse.nebula.visualization.xygraph.linearscale.Range;
-import org.eclipse.nebula.visualization.xygraph.undo.MovingAnnotationCommand;
-import org.eclipse.nebula.visualization.xygraph.undo.MovingAnnotationLabelCommand;
+import org.eclipse.nebula.visualization.xygraph.util.Preferences;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -382,7 +382,7 @@ public class Annotation extends Figure implements IAxisListener, IDataProviderLi
 		if(trace != null && trace.getHotSampleList().size()>0){
 			currentSnappedSample = trace.getHotSampleList().get(trace.getHotSampleList().size()/2);
 			currentPosition = new Point(xAxis.getValuePosition(currentSnappedSample.getXValue(), false),
-				 yAxis.getValuePosition(currentSnappedSample.getXValue(), false));
+				 yAxis.getValuePosition(currentSnappedSample.getYValue(), false));
 			xValue = currentSnappedSample.getXValue();
 			yValue = currentSnappedSample.getYValue();
 		}else{
@@ -402,7 +402,8 @@ public class Annotation extends Figure implements IAxisListener, IDataProviderLi
 				yAxis.getValuePosition(yValue, false));	
 		}		
 		updateInfoLableText(true);
-		revalidate();
+		if(xValue != oldX || yValue != oldY)
+			revalidate();
 		fireAnnotationMoved(oldX, oldY, xValue, yValue);
 	}
 

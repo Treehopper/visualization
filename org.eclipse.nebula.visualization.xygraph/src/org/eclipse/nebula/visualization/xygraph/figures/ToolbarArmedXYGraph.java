@@ -12,7 +12,6 @@ import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.nebula.visualization.xygraph.toolbar.XYGraphToolbar;
 
 /**An graph which consists of a toolbar and an XYGraph. 
  * @author Xihui Chen
@@ -51,6 +50,10 @@ public class ToolbarArmedXYGraph extends Figure {
 		toolbar.setOpaque(false);
 		add(toolbar);		
 		add(xyGraph);		
+	}
+	
+	public XYGraphToolbar getToolbar() {
+		return toolbar;
 	}
 	
 	@Override

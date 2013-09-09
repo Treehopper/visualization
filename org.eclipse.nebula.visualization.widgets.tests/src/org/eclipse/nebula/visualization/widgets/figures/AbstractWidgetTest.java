@@ -16,7 +16,7 @@ import java.util.List;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.nebula.visualization.widgets.introspection.Introspectable;
+import org.eclipse.nebula.visualization.internal.widgets.introspection.Introspectable;
 import org.eclipse.nebula.visualization.xygraph.util.XYGraphMediaFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;

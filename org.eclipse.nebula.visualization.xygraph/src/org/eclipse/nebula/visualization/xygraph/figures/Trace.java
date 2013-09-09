@@ -20,13 +20,13 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.nebula.visualization.xygraph.Messages;
-import org.eclipse.nebula.visualization.xygraph.Preferences;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.IDataProvider;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.IDataProviderListener;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.ISample;
 import org.eclipse.nebula.visualization.xygraph.dataprovider.Sample;
 import org.eclipse.nebula.visualization.xygraph.linearscale.Range;
 import org.eclipse.nebula.visualization.xygraph.linearscale.AbstractScale.LabelSide;
+import org.eclipse.nebula.visualization.xygraph.util.Preferences;
 import org.eclipse.nebula.visualization.xygraph.util.SWTConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -743,6 +743,8 @@ public class Trace extends Figure implements IDataProviderListener,
 									case STEP_VERTICALLY:
 										plPolyline.addPoint(predpPos.x, dpPos.y);
 										break;
+									default:
+										break;
 									}
 									
 									plPolyline.addPoint(dpPos);
@@ -755,6 +757,8 @@ public class Trace extends Figure implements IDataProviderListener,
 												break;
 											case STEP_VERTICALLY:
 												plPolyline.addPoint(predpPos.x, dpPos.y);
+												break;
+											default:
 												break;
 											}
 											
@@ -775,6 +779,8 @@ public class Trace extends Figure implements IDataProviderListener,
 												break;
 											case STEP_VERTICALLY:
 												plPolyline.addPoint(lastInRegion.x, dpPos.y);
+												break;
+											default:
 												break;
 											}
 
@@ -834,6 +840,8 @@ public class Trace extends Figure implements IDataProviderListener,
 									break;
 								case STEP_VERTICALLY:
 									plPolyline.addPoint(predpPos.x, dpPos.y);
+									break;
+								default:
 									break;
 								}
 								
